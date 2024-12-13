@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -22,7 +23,7 @@
                     <form method="post">
                         {% csrf_token %}
                         <button type="submit" class="btn btn-danger">Удалить</button>
-                        <a href="{% url 'mailing_list' %}" class="btn btn-secondary">Отмена</a>
+                        <a href="{% url 'mailing_app:list_mailing' %}" class="btn btn-secondary">Отмена</a>
                     </form>
                 </div>
             </div>
