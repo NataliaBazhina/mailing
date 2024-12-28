@@ -13,8 +13,10 @@
             <div class="card-body">
                 <h5 class="card-title">Информация о рассылке</h5>
                 <p><strong>Первая рассылка:</strong> {{ mailing.first_mailing }}</p>
+                <p><strong>Время следующей рассылки:</strong> {{ mailing.time_next_mailing }}</p>
                 <p><strong>Периодичность:</strong> {{ mailing.periodicity }} минут</p>
                 <p><strong>Статус:</strong> {{ mailing.status }}</p>
+                <p><strong>Актвность:</strong> {{ mailing.is_active }}</p>
 
                 <h5 class="mt-4">Клиенты:</h5>
                 <ul>

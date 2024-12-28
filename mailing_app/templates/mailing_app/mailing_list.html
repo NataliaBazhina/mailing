@@ -8,6 +8,9 @@
     <div class="col-md-4">
         {% for mailing in object_list %}
             <div class="card mb-4 box-shadow">
+                <div class="card-header bg-light">
+                    <h5 class="mb-0">Рассылка №{{ mailing.id }}</h5>
+                </div>
                 <div class="card-body">
                     <div class="d-flex justify-content-between align-items-center">
                         <div class="btn-group">
