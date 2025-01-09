@@ -14,6 +14,25 @@
                     <li><a href="{% url 'mailing_app:list_mail' %}" class="text-white">Сообщения</a></li>
                     <li><a href="{% url 'blog:list' %}" class="text-white">Статьи</a></li>
                 </ul>
+                <ul class="navbar-nav">
+                    {% if user.is_authenticated %}
+                      <li class="nav-item">
+                        <form action="{% url 'users:logout' %}" method="post" style="display: inline;">
+                          {% csrf_token %}
+                          <button type="submit" class="nav-link btn btn-link text-white" style="padding: 0; border: none; background: none;">
+                            Выйти
+                          </button>
+                        </form>
+                      </li>
+                    {% else %}
+                      <li class="nav-item {% if request.resolver_match.url_name == 'login' %}active{% endif %}">
+                        <a class="nav-link" href="{% url 'users:login' %}">Войти</a>
+                      </li>
+                      <li class="nav-item {% if request.resolver_match.url_name == 'register' %}active{% endif %}">
+                        <a class="nav-link" href="{% url 'users:register' %}">Регистрация</a>
+                      </li>
+                    {% endif %}
+                  </ul>
             </div>
         </div>
     </div>

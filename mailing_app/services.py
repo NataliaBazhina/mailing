@@ -10,8 +10,7 @@ from django.core.mail import send_mail
 
 
 def check_and_send_mailings():
-    mailings = Mailing.objects.filter(status=Mailing.Status.CREATED, next_mailing__lte=timezone.now())
-
+    mailings = Mailing.objects.filter(status=Mailing.Status.CREATED, next_mailing=timezone.now())
     for mailing in mailings:
         mailing.status = Mailing.Status.RUNNING
         mailing.save()
